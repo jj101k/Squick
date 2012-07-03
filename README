@@ -1,0 +1,35 @@
+WHAT THIS IS
+------------
+
+This is a library of general Javascript (DOM) helpers.
+
+RATIONALE
+---------
+
+Put simply, it's not jQuery.
+
+DOM is, as you quickly find out if you try to use it, distinctly
+awkward to handle for the common cases. There are a number of
+libraries which aim to resolve this (a popular one being jQuery),
+but they have their own disadvantages, and I want to use something
+better. Disadvantages you might see include:
+
+- Poor documentation
+- Completely unclear API <-> DOM mapping, hindering use of existing
+  knowledge.
+- Unclear API <-> Javascript mapping, making it difficult to use
+  normal Javascript code with the API (eg. all objects implicitly
+  being collections of obects)
+- Unnecessary reimplementation of built-in language features, largely
+  for extreme backward compatibility
+- Syntax which encourages poor programming (specifically jQuery
+  encourages you to scrape the node tree all the time rather than
+  keep track of the nodes you've already seen).
+
+The advantages that such frameworks (for example the backwards
+compatibility) do have tend to keep you tied to the disadvantages.
+
+Squick is intended to very simply provide the primary advantages
+of a DOM helper library without the mess, while retaining compatibility
+with reasonably modern browsers, with the extreme of intended
+compatibility at time of writing being MSIE8.
