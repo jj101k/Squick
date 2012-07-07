@@ -72,6 +72,19 @@ function Squick() {
   });
   return node;
 }
+/* Squick.typedArguments(argument_handers)
+ *
+ * Returns a function which, when called with your arguments property,
+ * will run through and parse them all into whatever variables
+ * you're after. argument_handlers is an array of objects with
+ * properties:
+ *
+ * - parse: A function which does your own desired work on the
+ *   current argument.
+ * - test: A function (given the current argument) which returns
+ *   false if this handler is to be skipped. If not provided, it
+ *   will be considered to return true.
+ */
 Squick.typedArguments = function(argument_handlers) {
   var f = function() {};
   argument_handlers.reverse().forEach(function(h) {
