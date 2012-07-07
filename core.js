@@ -42,7 +42,7 @@ function Squick() {
     }
   }
   var name, attributes={}, contents=[];
-  Squick.typedArguments([
+  var parser = Squick.typedArguments([
     {
       parse: function(a) {
         name = a;
@@ -60,6 +60,7 @@ function Squick() {
       },
     }
   ]);
+  parser(arguments);
 
   var node = name ? document.createElement(name) : document.createDocumentFragment();
   copy_map_tree(attributes, node);
