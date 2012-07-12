@@ -60,7 +60,8 @@ function Squick() {
       },
     }
   ]);
-  parser(arguments);
+
+  parser(Array.prototype.slice.call(arguments));
 
   var node = name ? document.createElement(name) : document.createDocumentFragment();
   copy_map_tree(attributes, node);
