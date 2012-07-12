@@ -91,8 +91,8 @@ Squick.typedArguments = function(argument_handlers) {
   argument_handlers.reverse().forEach(function(h) {
     f = function(args) {
       if(args.length == 0) return;
-      if( (!h.test) || h.test(args[i])) {
-        h.parse(args[i]);
+      if( (!h.test) || h.test(args[0])) {
+        h.parse(args[0]);
         args = args.slice(1);
       }
       return f(args);
