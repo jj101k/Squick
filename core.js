@@ -90,13 +90,14 @@ function Squick() {
 Squick.typedArguments = function(argument_handlers) {
   var f = function() {};
   argument_handlers.reverse().forEach(function(h) {
+    var old_f = f;
     f = function(args) {
       if(args.length == 0) return;
       if( (!h.test) || h.test(args[0])) {
         h.parse(args[0]);
         args = args.slice(1);
       }
-      return f(args);
+      return old_f(args);
     };
   });
   return f;
