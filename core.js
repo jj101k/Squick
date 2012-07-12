@@ -31,7 +31,7 @@
 function Squick() {
   var node;
   function is_plain_map(a) {
-    return(a && typeof a == "object" && !a.prototype);
+    return(a && a.constructor === Object);
   }
   function copy_map_tree(a, b) {
     for(var k in a) {
