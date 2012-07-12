@@ -98,4 +98,5 @@ Squick.typedArguments = function(argument_handlers) {
       return f(args);
     };
   });
+  return f;
 };
